@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Stack } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { exerciseOptions, fetchData, youtubeOptions } from '../utils/fetchData'
 import Detail from '../components/Detail';
@@ -23,6 +23,7 @@ const ExerciseDetail = () => {
       const exerciseDetailData = await fetchData(
         `${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions
       );
+      setExerciseDetail(exerciseDetailData)
 
       const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=
       ${exerciseDetailData.name}`, youtubeOptions)
@@ -42,12 +43,12 @@ const ExerciseDetail = () => {
   }, [id])
 
   return (
-    <Stack>
+    <Box>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises}
         equipmentExercises={equipmentExercises} />
-    </Stack>
+    </Box>
   )
 }
 

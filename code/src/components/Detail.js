@@ -4,7 +4,7 @@ import { Typography, Stack, Button } from '@mui/material';
 import BodyPartImage from '../assets/icons/body-part.png';
 import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
-import ExerciseDetail from '../pages/ExerciseDetail';
+
 
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
@@ -39,7 +39,7 @@ const Detail = ({ exerciseDetail }) => {
           is one of the best exercises you can do to target your {target}.
           This will help improve your mood and gain energy.
         </Typography>
-        {extraDetail.map((item) => (
+        {extraDetail?.map((item) => (
           <Stack key={item.name} direction='row' gap='24px' alignItems='center'>
             <Button sx={{
               background: '#fff2db', borderRadius: '50%', width: '100px',
