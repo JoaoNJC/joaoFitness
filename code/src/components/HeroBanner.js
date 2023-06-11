@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Stack, Typography, Button } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import HeroBannerImage from '../assets/images/banner.png'
 
 
@@ -15,17 +15,15 @@ const HeroBanner = () => {
         Fitness Club
       </Typography>
       <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '40px' } }} mb="23px" mt="30px">
-        Sweat, Smile <br /> and Repeat
+        Let's get to work, <br /> doing it with a smile.
       </Typography>
       <Typography fontSize='22px' lineHeight='35px' mb={4}>
-        Check out our most effective exercises
+        Check out our most efficient exercises, <br />
+        designed for your specific needs.
       </Typography>
-      <Button variant="contained" color='error' href="#exercises" sx={{
-        backgroundColor: '#ff2625',
-        padding: '10px'
-      }}>
-        Explore Exercises
-      </Button>
+      <Stack>
+        <a href="#exercises" style={{ marginTop: '45px', textDecoration: 'none', width: '200px', textAlign: 'center', background: '#FF2625', padding: '14px', fontSize: '22px', textTransform: 'none', color: 'white', borderRadius: '4px' }}>Explore Exercises</a>
+      </Stack>
       <Typography
         fontWeight={600}
         color="#ff2625"
@@ -34,8 +32,9 @@ const HeroBanner = () => {
           display: { lg: 'block', xs: 'none' }
         }}
         fontSize="200px"
+        mt={10}
       >
-        Exercise
+        Let's work
       </Typography>
       <img src={HeroBannerImage} alt="banner" className='hero-banner-img' />
     </Box>
